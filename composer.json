@@ -13,6 +13,13 @@
             "MAZE\\MFM\\": "src"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MAZE\\MFM\\Providers\\MFMServiceProvider"
+            ]
+        }
+    },
     "license": "MIT",
     "authors": [
         {

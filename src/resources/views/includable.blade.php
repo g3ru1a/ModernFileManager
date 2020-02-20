@@ -48,13 +48,21 @@
             </div>
             <div class="row">
                 <!--  Directory Tree  -->
-                <div class="col-12 col-md-2 right-divider">
+                <div class="col-12 col-md-3 right-divider">
                     <div class="p-3">
-                        <h6> <small class="fas fa-chevron-down"></small> <i class="fas fa-inbox"></i> {{ $mfm->getPath() }} </h6>
+                        @php($id_b = str_replace('/', '-', $mfm->getPath()))
+                        <button onclick="getDirectories('{{ $id_b }}', $(this).children('small').eq(0), $(this))" class="mfm-dir flat btn btn-block text-left ml-1 mb-1 py-0" type="button" >
+                            @php($subdirs = json_decode(\MAZE\MFM\Controllers\MFMController::get($mfm->getPath())))
+                            @if(count($subdirs) != 0)
+                                <small class="fas fa-chevron-down"></small>
+                            @endif
+                            <i class="fas fa-inbox"></i> {{ $mfm->getPath() }}
+                        </button>
+                        <div class="collapse ml-1 pl-2 show" id="{{ $id_b }}">
                             @foreach($cont as $d)
                                 @if(is_dir($path.'/'.$d) && $d != '.' && $d != '..')
                                     @php($id = str_replace('/', '-', $path.'/'.$d))
-                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0), $(this))" class="mfm-dir flat btn ml-1 mb-1 py-0" type="button" >
+                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0), $(this))" class="mfm-dir flat btn btn-block text-left ml-1 mb-1 py-0" type="button" >
                                         @php($subdirs = json_decode(\MAZE\MFM\Controllers\MFMController::get($path.'-'.$d)))
                                         @if(count($subdirs) != 0)
                                             <small class="fas fa-chevron-right"></small>
@@ -66,10 +74,17 @@
                                     </div>
                                 @endif
                             @endforeach
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-9">
-                    
+                <div class="col-12 col-md-9" id="folder_contents">
+{{--                    <button class="btn btn-theme-clear btn-lg"><h1 class="fas fa-folder"></h1><h6>Blah</h6></button>--}}
+                    @foreach($cont as $d)
+                        @if($d != '.' && $d != '..')
+                            @php($tpath = str_replace('/', '-', $path.'/'.$d))
+                            <button ondblclick="loadFolderContents('{{ $tpath }}')" class="btn btn-theme-clear btn-lg"><h1 class="fas fa-{{ \MAZE\MFM\Controllers\MFMController::getFileType($path.'-'.$d) }}"></h1><h6>{{$d}}</h6></button>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

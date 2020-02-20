@@ -35,7 +35,14 @@
     background-color: var(--main-color-dark) !important;
     border-color: var(--main-color-dark) !important;
 }
-.mfm-dir:hover {
+
+.btn-theme-clear:focus {
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    color: var(--text-color-active) !important;
+}
+
+.mfm-dir:hover, .btn-theme-clear:hover {
     color: var(--text-color-active) !important;
     background-color: var(--main-color-light) !important;
     border-color: var(--main-color-light) !important;

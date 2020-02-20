@@ -37,7 +37,7 @@ function getDirectories(path_as_id, icon, button_self){
 
 function makeButtonAndCollapsable(path, dir_name){
     let id = path;
-    let button = '<button onclick="getDirectories(\''+id+'\', $(this).children(\'small\').eq(0), $(this))" class="mfm-dir btn ml-1 py-0" type="button" >' +
+    let button = '<button onclick="getDirectories(\''+id+'\', $(this).children(\'small\').eq(0), $(this))" class="mfm-dir btn flat ml-1 mb-1 py-0" type="button" >' +
         '<small class="fas fa-chevron-right"></small>' +
         ' <i class="fas fa-folder"></i> '+ dir_name +
         '</button>' +

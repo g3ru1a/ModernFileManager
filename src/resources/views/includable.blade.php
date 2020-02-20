@@ -54,7 +54,7 @@
                             @foreach($cont as $d)
                                 @if(is_dir($path.'/'.$d) && $d != '.' && $d != '..')
                                     @php($id = str_replace('/', '-', $path.'/'.$d))
-                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0), $(this))" class="mfm-dir btn ml-1 py-0" type="button" >
+                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0), $(this))" class="mfm-dir flat btn ml-1 mb-1 py-0" type="button" >
                                         @php($subdirs = json_decode(\MAZE\MFM\Controllers\MFMController::get($path.'-'.$d)))
                                         @if(count($subdirs) != 0)
                                             <small class="fas fa-chevron-right"></small>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
-
+                    
                 </div>
             </div>
         </div>

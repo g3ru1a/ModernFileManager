@@ -1,3 +1,12 @@
+:root {
+    --main-color: #C3272B;
+    --main-color-dark: #9D2933;
+    --main-color-light: #D24D57;
+    --text-color-active: #fff;
+    --text-color: #212529;
+}
+
+
 #mfm-container{
     border-radius: 0;
 }
@@ -14,10 +23,20 @@
 }
 
 .bg-theme{
-    background-color: #C3272B !important;
+    background-color: var(--main-color) !important;
 }
 .btn-theme{
-    background-color: #C3272B !important;
-    border-color: #C3272B !important;
-    color: #fff !important;
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    color: var(--text-color-active) !important;
+}
+
+.btn-theme:hover {
+    background-color: var(--main-color-dark) !important;
+    border-color: var(--main-color-dark) !important;
+}
+.mfm-dir:hover {
+    color: var(--text-color-active) !important;
+    background-color: var(--main-color-light) !important;
+    border-color: var(--main-color-light) !important;
 }

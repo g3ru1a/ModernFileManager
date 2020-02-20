@@ -12,3 +12,12 @@
     border-right-color: rgba(0, 0, 0, 0.125);
     border-right-width: 1px;
 }
+
+.bg-theme{
+    background-color: #C3272B !important;
+}
+.btn-theme{
+    background-color: #C3272B !important;
+    border-color: #C3272B !important;
+    color: #fff !important;
+}

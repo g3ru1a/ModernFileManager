@@ -1,6 +1,10 @@
 $('.collapse').collapse();
 
-function getDirectories(path_as_id, icon){
+function getDirectories(path_as_id, icon, button_self){
+    $('.mfm-dir').each(function(){
+        $(this).removeClass('bg-theme').removeClass('text-white');
+    });
+    button_self.addClass('bg-theme').addClass('text-white');
     $.get('/mfm/get/' + path_as_id, function(data){
         let dir_obj = $('#'+path_as_id);
 
@@ -33,7 +37,7 @@ function getDirectories(path_as_id, icon){
 
 function makeButtonAndCollapsable(path, dir_name){
     let id = path;
-    let button = '<button onclick="getDirectories(\''+id+'\', $(this).children(\'small\').eq(0))" class="btn ml-1" type="button" >' +
+    let button = '<button onclick="getDirectories(\''+id+'\', $(this).children(\'small\').eq(0), $(this))" class="mfm-dir btn ml-1 py-0" type="button" >' +
         '<small class="fas fa-chevron-right"></small>' +
         ' <i class="fas fa-folder"></i> '+ dir_name +
         '</button>' +

@@ -20,29 +20,29 @@
             <div class="row p-4">
                 <div class="col-12 mfm-menu">
                     <div class="btn-group mb-2">
-                        <button class="btn btn-primary flat"> <i class="fa fa-chevron-left"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-chevron-right"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-chevron-up"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-left"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-right"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-up"></i> </button>
                     </div>
-                    <button class="btn btn-primary flat mb-2"> <i class="fa fa-sync-alt"></i> </button>
+                    <button class="btn btn-theme flat mb-2"> <i class="fa fa-sync-alt"></i> </button>
                     <div class="btn-group mb-2">
-                        <button class="btn btn-primary flat"> <i class="fas fa-file-medical"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-folder-plus"></i> </button>
-                    </div>
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-primary flat"> <i class="fa fa-upload"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-download"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fas fa-file-medical"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-folder-plus"></i> </button>
                     </div>
                     <div class="btn-group mb-2">
-                        <button class="btn btn-primary flat"> <i class="fas fa-copy"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fas fa-cut"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fas fa-paste"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fas fa-times-circle"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-upload"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-download"></i> </button>
                     </div>
                     <div class="btn-group mb-2">
-                        <button class="btn btn-primary flat"> <i class="fa fa-list"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-th-large"></i> </button>
-                        <button class="btn btn-primary flat"> <i class="fa fa-th"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fas fa-copy"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fas fa-cut"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fas fa-paste"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fas fa-times-circle"></i> </button>
+                    </div>
+                    <div class="btn-group mb-2">
+                        <button class="btn btn-theme flat"> <i class="fa fa-list"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-th-large"></i> </button>
+                        <button class="btn btn-theme flat"> <i class="fa fa-th"></i> </button>
                     </div>
                 </div>
             </div>
@@ -54,10 +54,10 @@
                             @foreach($cont as $d)
                                 @if(is_dir($path.'/'.$d) && $d != '.' && $d != '..')
                                     @php($id = str_replace('/', '-', $path.'/'.$d))
-                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0))" class="btn ml-1" type="button" >
+                                    <button onclick="getDirectories('{{ $id }}', $(this).children('small').eq(0), $(this))" class="mfm-dir btn ml-1 py-0" type="button" >
                                         @php($subdirs = json_decode(\MAZE\MFM\Controllers\MFMController::get($path.'-'.$d)))
                                         @if(count($subdirs) != 0)
-                                        <small class="fas fa-chevron-right"></small>
+                                            <small class="fas fa-chevron-right"></small>
                                         @endif
                                         <i class="fas fa-folder"></i> {{ $d }}
                                     </button>

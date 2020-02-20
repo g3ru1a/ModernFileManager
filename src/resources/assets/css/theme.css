@@ -1,0 +1,14 @@
+#mfm-container{
+    border-radius: 0;
+}
+
+.btn.flat {
+    border-radius: 0 !important;
+}
+
+.right-divider {
+    border-style: solid;
+    border-width: 0;
+    border-right-color: rgba(0, 0, 0, 0.125);
+    border-right-width: 1px;
+}

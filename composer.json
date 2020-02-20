@@ -3,7 +3,8 @@
     "description": "The only file manager you need.",
     "type": "library",
     "require": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "8.5.x-dev"

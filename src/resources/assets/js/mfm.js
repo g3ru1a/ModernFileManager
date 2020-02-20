@@ -30,8 +30,8 @@ function getDirectories(path_as_id, icon, button_self){
             if(!icon.hasClass('fa-chevron-right')) icon.toggleClass('fa-chevron-right');
             icon.toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');
             dir_obj.collapse('toggle');
-            loadFolderContents(path_as_id);
         }
+        loadFolderContents(path_as_id);
     });
 }
 

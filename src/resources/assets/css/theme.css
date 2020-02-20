@@ -4,11 +4,62 @@
     --main-color-light: #D24D57;
     --text-color-active: #fff;
     --text-color: #212529;
+    --theme-background: #212529;
+    --light-background: #6C7A89;
+    --white: #EEEEEE;
+    --light-gray: #F2F1EF;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.bg-theme-ui {
+    background-color: var(--theme-background) !important;
+}
+
+#mfm-container{
+    min-height: 500px;
+    max-height: 500px;
+    border-radius: 0;
+    border-width: 2px;
+    overflow: hidden scroll;
+    background-color: var(--light-background) !important;
+}
+
+#mfm_dir_tree {
+    overflow: scroll;
+}
+
+#folder_contents {
+    background-color: var(--white);
+    min-height: 100%;
 }
 
 
-#mfm-container{
-    border-radius: 0;
+.border-theme{
+    border-color: var(--light-gray) !important;
+}
+
+.mfm-dir{
+    color: var(--light-gray) !important;
 }
 
 .btn.flat {

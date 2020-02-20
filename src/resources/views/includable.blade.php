@@ -15,41 +15,41 @@
     <div class="alert alert-primary col-12" role="alert">
         <?php echo highlight_string("<?php\n\$data =\n" . var_export($cont, true) . ";\n?>") ?>
     </div>
-    <div class="card col-12 px-0" id="mfm-container">
-        <div class="card-body p-0">
-            <div class="row p-4">
-                <div class="col-12 mfm-menu">
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-left"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-right"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-chevron-up"></i> </button>
+    <div class="card col-11 px-0" id="mfm-container">
+        <div class="card-body p-0 h-100">
+            <div class="row p-2 border-bottom bg-theme-ui border-theme">
+                <div class="col-12 mfm-menu ">
+                    <div class="btn-group mb-2 mb-md-0 mr-1">
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-chevron-left"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-chevron-right"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-chevron-up"></i> </button>
                     </div>
-                    <button class="btn btn-theme flat mb-2"> <i class="fa fa-sync-alt"></i> </button>
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-theme flat"> <i class="fas fa-file-medical"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-folder-plus"></i> </button>
+                    <button class="btn btn-theme-clear text-white flat mb-2 mb-md-0 mr-1"> <i class="fa fa-sync-alt"></i> </button>
+                    <div class="btn-group mb-2 mb-md-0 mr-1">
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fas fa-file-medical"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-folder-plus"></i> </button>
                     </div>
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-theme flat"> <i class="fa fa-upload"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-download"></i> </button>
+                    <div class="btn-group mb-2 mb-md-0 mr-1">
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-upload"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-download"></i> </button>
                     </div>
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-theme flat"> <i class="fas fa-copy"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fas fa-cut"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fas fa-paste"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fas fa-times-circle"></i> </button>
+                    <div class="btn-group mb-2 mb-md-0 mr-1">
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fas fa-copy"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fas fa-cut"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fas fa-paste"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fas fa-times-circle"></i> </button>
                     </div>
-                    <div class="btn-group mb-2">
-                        <button class="btn btn-theme flat"> <i class="fa fa-list"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-th-large"></i> </button>
-                        <button class="btn btn-theme flat"> <i class="fa fa-th"></i> </button>
+                    <div class="btn-group mb-2 mb-md-0 mr-1">
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-list"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-th-large"></i> </button>
+                        <button class="btn btn-theme-clear text-white flat"> <i class="fa fa-th"></i> </button>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row h-100">
                 <!--  Directory Tree  -->
-                <div class="col-12 col-md-3 right-divider">
-                    <div class="p-3">
+                <div class="col-12 col-md-3 border-right border-theme bg-theme-ui" id="mfm_dir_tree">
+                    <div class="pt-2 mfm-dir-tree">
                         @php($id_b = str_replace('/', '-', $mfm->getPath()))
                         <button onclick="getDirectories('{{ $id_b }}', $(this).children('small').eq(0), $(this))" class="mfm-dir flat btn btn-block text-left ml-1 mb-1 py-0" type="button" >
                             @php($subdirs = json_decode(\MAZE\MFM\Controllers\MFMController::get($mfm->getPath())))
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-9" id="folder_contents">
+                <div class="col-12 col-md-9 p-2" id="folder_contents">
 {{--                    <button class="btn btn-theme-clear btn-lg"><h1 class="fas fa-folder"></h1><h6>Blah</h6></button>--}}
                     @foreach($cont as $d)
                         @if($d != '.' && $d != '..')

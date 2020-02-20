@@ -9,7 +9,7 @@ In your terminal of choice run these two commands:
 ### Usage
 To use this package you have to do two things:
 
- 1. Create the MFM Object
+ **1. Create the MFM Object**
  
  Use the Object at the top of your controller file
 ````
@@ -21,7 +21,7 @@ $path = str_replace('-', '/', 'path/to/main-directory);
 $mfm = new MFM($path);
 return view('example-view', ['mfm'=>$mfm]);
 ````
- 2. Include the blade view
+ **2. Include the blade view**
 
 Add the following in your view
 ````
